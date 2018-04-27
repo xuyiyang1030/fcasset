@@ -1,0 +1,37 @@
+<!--上传 fc-upload -->
+<fc-layoutpanel>
+    <fc-title fcLabel="上传" fcheader></fc-title>
+    <fc-layoutcol fccontent fcSpans="1,1">
+        <fc-layoutgroup fcTitle="基本" fccontent1>
+            <div fccontent>
+                <fc-upload (fcEvent)="fileEvent($event)" [fcParam]="{FILETYPE:'PIC',SOURCEID:'dd90c093667947c4a4265e001602b9cd',SOURCEAID:'SYSAPP','SOURCEFIELD':'APPURL','RESTITLE':''}">
+                </fc-upload>
+            </div>
+        </fc-layoutgroup>
+        <fc-layoutgroup fcTitle="照片墙" fccontent1>
+            <div fccontent>
+                <fc-upload fcListType="picture-card" (fcEvent)="fileEvent($event)" [fcParam]="{FILETYPE:'PIC',SOURCEID:'dd90c093667947c4a4265e001602b9cd',SOURCEAID:'SYSAPP','SOURCEFIELD':'APPURL','RESTITLE':''}">
+                </fc-upload>
+            </div>
+        </fc-layoutgroup>
+        <fc-layoutgroup fcTitle="图片列表样式" fccontent2>
+            <div fccontent>
+                <fc-upload fcListType="picture" (fcEvent)="fileEvent($event)" [fcParam]="{FILETYPE:'PIC',SOURCEID:'dd90c093667947c4a4265e001602b9cd',SOURCEAID:'SYSAPP','SOURCEFIELD':'APPURL','RESTITLE':''}">
+                </fc-upload>
+            </div>
+        </fc-layoutgroup>
+    </fc-layoutcol>
+    <!-- API -->
+    <fc-layoutpanel fccontent>
+        <fc-title fcLabel="属性" fcheader> </fc-title>
+        <div style="height:450px;" fccontent>
+            <fc-listdata [fcAppid]="'FCFIELDS'" [fcOption]="fcOption" [fcCondition]="fcCondition"></fc-listdata>
+        </div>
+    </fc-layoutpanel>
+    <fc-layoutpanel fccontent>
+        <fc-title fcLabel="事件" fcheader> </fc-title>
+        <div style="height:450px;" fccontent>
+            <fc-listdata [fcAppid]="'FCEVENT'" [fcOption]="fcOption" [fcCondition]="fcCondition"></fc-listdata>
+        </div>
+    </fc-layoutpanel>
+</fc-layoutpanel>

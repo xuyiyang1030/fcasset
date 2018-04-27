@@ -1,0 +1,58 @@
+<!-- 下拉多选 fc-buttonfc-many -->
+<fc-layoutpanel>
+    <fc-title fcLabel="下拉多选" fcheader></fc-title>
+    <fc-layoutcol fccontent fcSpans="1,1">
+        <fc-layoutgroup fcTitle="基本" fccontent1>
+            <div fccontent>
+                <label>{{manyValue|json}}</label>
+                <fc-many [(ngModel)]="manyValue"  [fcOption]="manyOptions"></fc-many>
+            </div>
+        </fc-layoutgroup>
+        <fc-layoutgroup fcTitle="大小" fccontent2>
+            <div fccontent>
+                <div>
+                    <fc-many [(ngModel)]="manyValue"  fcSize="default" [fcOption]="manyOptions"></fc-many>
+                </div>
+                <div style="margin-top:24px;">
+                    <fc-many [(ngModel)]="manyValue"  fcSize="large" [fcOption]="manyOptions"></fc-many>
+                </div>
+                <div style="margin-top:24px;">
+                    <fc-many [(ngModel)]="manyValue"  fcSize="small" [fcOption]="manyOptions"></fc-many>
+                </div>
+            </div>
+        </fc-layoutgroup>
+        <fc-layoutgroup fcTitle="禁用" fccontent1>
+            <div fccontent>
+                <fc-many [(ngModel)]="manyValue"  [fcOption]="manyOptionsDisabled"></fc-many>
+            </div>
+        </fc-layoutgroup>
+        <fc-layoutgroup fcTitle="搜索框" fccontent2>
+            <div fccontent>
+                <fc-many fcShowSearch="true" [(ngModel)]="manyValue"  [fcOption]="manyOptionsDisabled"></fc-many>
+            </div>
+        </fc-layoutgroup>
+        <fc-layoutgroup fcTitle="当下拉列表为空时显示的内容" fccontent1>
+            <div fccontent>
+                <fc-many [(ngModel)]="manyValue" fcNotFoundContent="当下拉列表为空时显示的内容"  [fcOption]="manynullOptions" fcNotFoundContent="没有数据"></fc-many>
+            </div>
+        </fc-layoutgroup>
+        <fc-layoutgroup fcTitle="默认文字" fccontent2>
+            <div fccontent>
+                <fc-many [(ngModel)]="manyValue" [fcOption]="manyOptions" fcPlaceHolder="默认文字"></fc-many>
+            </div>
+        </fc-layoutgroup>
+    </fc-layoutcol>
+    <!-- API -->
+    <fc-layoutpanel fccontent>
+        <fc-title fcLabel="属性" fcheader> </fc-title>
+        <div style="height:450px;" fccontent>
+            <fc-listdata [fcAppid]="'FCFIELDS'" [fcOption]="fcOption" [fcCondition]="fcCondition"></fc-listdata>
+        </div>
+    </fc-layoutpanel>
+    <fc-layoutpanel fccontent>
+        <fc-title fcLabel="事件" fcheader> </fc-title>
+        <div style="height:450px;" fccontent>
+            <fc-listdata [fcAppid]="'FCEVENT'" [fcOption]="fcOption" [fcCondition]="fcCondition"></fc-listdata>
+        </div>
+    </fc-layoutpanel>
+</fc-layoutpanel>

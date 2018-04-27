@@ -1,0 +1,33 @@
+<div class="login-in">
+    <div class="login-bg">
+        <div class="login-content clearfix">
+            <div class="login-right">
+                <div class="login-right-content">
+                    <h2 class="login-h2">
+                        欢迎登录
+                    </h2>
+                    <div class="sigin-error">
+                        <div class="sigin-error-in" *ngIf="hasError">
+                            <i class="icon iconfont icon-error"></i>
+                            <span>{{msg}}</span>
+                        </div>
+                    </div>
+                    <form>
+                        <div class="user-box">
+                            <fc-text fcLabel="用户名" [(ngModel)]="userId" fcSize="large" fcPlaceHolder="请输入用户名" name="userId"></fc-text>
+                        </div>
+                        <div class="user-box">
+                            <fc-text fcLabel="密码" fcType="password" [(ngModel)]="password" fcSize="large" fcPlaceHolder="请输入密码" name="password"></fc-text>
+                        </div>
+                        <div class="user-box login-btn">
+                            <fc-button fcLabel="登陆" fcType="primary" (click)="login()" fcBlock="true"></fc-button>
+                        </div>
+                        <div class="google-download">
+                            <p>本系统仅支持<a href="">谷歌</a>和<a href="">IE10以上</a>浏览器</p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

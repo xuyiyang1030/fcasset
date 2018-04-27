@@ -1,0 +1,55 @@
+<!-- 大文本 fc-textarea -->
+<fc-layoutpanel>
+    <fc-title fcLabel="大文本" fcheader></fc-title>
+    <fc-layoutcol fccontent fcSpans="1,1">
+        <fc-layoutgroup fcTitle="基本" fccontent1>
+            <div fccontent>
+                <label>{{content}}</label>
+                <fc-textarea fcPlaceHolder="请输入"></fc-textarea>
+            </div>
+        </fc-layoutgroup>
+        <fc-layoutgroup fcTitle="只读" fccontent2>
+            <div fccontent>
+                <fc-textarea [(ngModel)]="content" fcReadonly="true"></fc-textarea>
+            </div>
+        </fc-layoutgroup>
+        <fc-layoutgroup fcTitle="禁用" fccontent2>
+            <div fccontent>
+                <fc-textarea [(ngModel)]="content" fcDisabled="true"></fc-textarea>
+            </div>
+        </fc-layoutgroup>
+        <fc-layoutgroup fcTitle="跨1列" fccontent2>
+            <div fccontent>
+                <fc-textarea fcCol="2" [(ngModel)]="content"></fc-textarea>
+            </div>
+        </fc-layoutgroup>
+        <fc-layoutgroup fcTitle="跨2列" fccontent2>
+            <div fccontent>
+                <fc-textarea fcCol="1" [(ngModel)]="content"></fc-textarea>
+            </div>
+        </fc-layoutgroup>
+        <fc-layoutgroup fcTitle="控制固定框的行数" fccontent1>
+            <div fccontent>
+                <fc-textarea [(ngModel)]="content" fcRows="8"></fc-textarea>
+            </div>
+        </fc-layoutgroup>
+        <fc-layoutgroup fcTitle="在文字框中显示提示讯息" fccontent1>
+            <div fccontent>
+                <fc-textarea  fcPlaceHolder="请输入..."></fc-textarea>
+            </div>
+        </fc-layoutgroup>
+    </fc-layoutcol>
+    <!-- API -->
+    <fc-layoutpanel fccontent>
+        <fc-title fcLabel="属性" fcheader> </fc-title>
+        <div style="height:500px;" fccontent>
+            <fc-listdata [fcAppid]="'FCFIELDS'" [fcOption]="fcOption" [fcCondition]="fcCondition"></fc-listdata>
+        </div>
+    </fc-layoutpanel>
+    <fc-layoutpanel fccontent>
+        <fc-title fcLabel="事件" fcheader> </fc-title>
+        <div style="height:500px;" fccontent>
+            <fc-listdata [fcAppid]="'FCEVENT'" [fcOption]="fcOption" [fcCondition]="fcCondition"></fc-listdata>
+        </div>
+    </fc-layoutpanel>
+</fc-layoutpanel>

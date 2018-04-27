@@ -1,0 +1,54 @@
+<!-- 单选 fc-radio -->
+<fc-layoutpanel>
+    <fc-title fcLabel="单选" fcheader></fc-title>
+    <fc-layoutcol fccontent fcSpans="1,1">
+        <fc-layoutgroup fcTitle="基本" fccontent1>
+            <div fccontent>
+                <label>{{radioValue}}</label>
+                <fc-radio></fc-radio>
+                <fc-radio [(ngModel)]="radioValue" [fcOption]="radioOptions"></fc-radio>
+            </div>
+        </fc-layoutgroup>
+        <fc-layoutgroup fcTitle="类型" fccontent2>
+            <div fccontent>
+                <fc-radio fcType="radio" [(ngModel)]="radioValue" [fcOption]="radioOptions"></fc-radio>
+                <fc-radio fcType="button" [(ngModel)]="radioValue" [fcOption]="radioOptions"></fc-radio>
+            </div>
+        </fc-layoutgroup>
+        <fc-layoutgroup fcTitle="大小" fccontent1>
+            <div fccontent>
+                <fc-radio fcType="button" fcSize="small" [(ngModel)]="radioValue" [fcOption]="radioOptions" style="display:inline-block;margin-right:24px;"></fc-radio>
+                <fc-radio fcType="button" fcSize="default" [(ngModel)]="radioValue" [fcOption]="radioOptionsDisabled" style="display:inline-block;margin-right:24px;"></fc-radio>
+                <fc-radio fcType="button" fcSize="large" [(ngModel)]="radioValue" [fcOption]="radioOptionsDisabled" style="display:block;margin-top:24px;"></fc-radio>
+            </div>
+        </fc-layoutgroup>
+        <fc-layoutgroup fcTitle="禁用" fccontent2>
+            <div fccontent>
+                <fc-radio [(ngModel)]="radioValue" fcDisabled="true" [fcOption]="radioOptionsDisabled"></fc-radio>
+            </div>
+        </fc-layoutgroup>
+        <fc-layoutgroup fcTitle="单独使用" fccontent1>
+            <div fccontent>
+                <fc-radio [(ngModel)]="radioValueSingle" [fcOption]="radioOption"></fc-radio>
+            </div>
+        </fc-layoutgroup>
+        <fc-layoutgroup fcTitle="按钮样式" fccontent2>
+            <div fccontent>
+                <fc-radio fcType="button" fcSize="small" [(ngModel)]="radioValue" [fcOption]="radioOptions"></fc-radio>
+            </div>
+        </fc-layoutgroup>
+    </fc-layoutcol>
+    <!-- API -->
+    <fc-layoutpanel fccontent>
+        <fc-title fcLabel="属性" fcheader> </fc-title>
+        <div style="height:450px;" fccontent>
+            <fc-listdata [fcAppid]="'FCFIELDS'" [fcOption]="fcOption" [fcCondition]="fcCondition"></fc-listdata>
+        </div>
+    </fc-layoutpanel>
+    <fc-layoutpanel fccontent>
+        <fc-title fcLabel="事件" fcheader> </fc-title>
+        <div style="height:450px;" fccontent>
+            <fc-listdata [fcAppid]="'FCEVENT'" [fcOption]="fcOption" [fcCondition]="fcCondition"></fc-listdata>
+        </div>
+    </fc-layoutpanel>
+</fc-layoutpanel>

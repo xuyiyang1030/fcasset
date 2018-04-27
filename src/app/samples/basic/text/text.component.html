@@ -1,0 +1,105 @@
+<!-- 文本 fc-text -->
+<fc-layoutpanel>
+    <fc-title fcLabel="文本" fcheader></fc-title>
+    <fc-layoutcol fccontent fcSpans="1,1">
+        <fc-layoutgroup fcTitle="基本" fccontent1>
+            <div fccontent>
+                <label>{{content}}</label>
+                <fc-text fcPlaceHolder="请输入"></fc-text>
+                <fc-text [(ngModel)]="content" style="display:block;margin-top:24px;"></fc-text>
+            </div>
+        </fc-layoutgroup>
+        <fc-layoutgroup fcTitle="类型" fccontent2>
+            <div fccontent>
+                <div>
+                    文本类型:
+                    <fc-text fcType="text" [(ngModel)]="content"></fc-text>
+                </div>
+                <div style="display:block;margin-top:24px;">
+                    密码类型:
+                    <fc-text fcType="password" [(ngModel)]="content"></fc-text>
+                </div>
+                <div style="display:block;margin-top:24px;">
+                    查询:
+                    <fc-text fcType="search" fcPlaceHolder="请输入查询条件"></fc-text>
+                </div>
+                <div style="display:block;margin-top:24px;">
+                    隐藏:
+                    <fc-text fcType="hidden"></fc-text>
+                </div>
+            </div>
+        </fc-layoutgroup>
+        <fc-layoutgroup fcTitle="大小" fccontent1>
+            <div fccontent>
+                <div>
+                    默认:
+                    <fc-text [(ngModel)]="content" fcSize="default"></fc-text>
+                </div>
+                <div style="display:block;margin-top:24px;">
+                    大:
+                    <fc-text [(ngModel)]="content" fcSize="large"></fc-text>
+                </div>
+                <div style="display:block;margin-top:24px;">
+                    小:
+                    <fc-text [(ngModel)]="content" fcSize="small"></fc-text>
+                </div>
+            </div>
+        </fc-layoutgroup>
+        <fc-layoutgroup fcTitle="只读" fccontent2>
+            <div fccontent>
+                <fc-text [(ngModel)]="content" fcReadonly="true"></fc-text>
+            </div>
+        </fc-layoutgroup>
+        <fc-layoutgroup fcTitle="联想输入" fccontent2>
+            <div fccontent>
+                <fc-text fcLabel="联想输入测试" [fcAppid]="'SYSAPP'" [(ngModel)]="fuzzy" [fcOption]="{field:{FIELDCODE:'APPNAME'}}"
+                    name="fuzzy"></fc-text>
+            </div>
+        </fc-layoutgroup>
+        <fc-layoutgroup fcTitle="禁用" fccontent2>
+            <div fccontent>
+                <fc-text [(ngModel)]="content" fcDisabled="true"></fc-text>
+            </div>
+        </fc-layoutgroup>
+        <fc-layoutgroup fcTitle="前置标签" fccontent1>
+            <div fccontent>
+                <fc-text [(ngModel)]="addonbefore">
+                    <div fcAddonBefore="https://"></div>
+                </fc-text>
+            </div>
+        </fc-layoutgroup>
+        <fc-layoutgroup fcTitle="后置标签" fccontent2>
+            <div fccontent>
+                <fc-text [(ngModel)]="addonbefore" fcAddonAfter="anticon anticon-like-o">
+                </fc-text>
+            </div>
+        </fc-layoutgroup>
+        <fc-layoutgroup fcTitle="内部前缀" fccontent1>
+            <div fccontent>
+                <fc-text [(ngModel)]="content">
+                    <i class="anticon anticon-like-o" fcPrefix></i>
+                </fc-text>
+            </div>
+        </fc-layoutgroup>
+        <fc-layoutgroup fcTitle="内部后缀" fccontent2>
+            <div fccontent>
+                <fc-text [(ngModel)]="content">
+                    <i class="anticon anticon-like-o" fcSuffix></i>
+                </fc-text>
+            </div>
+        </fc-layoutgroup>
+    </fc-layoutcol>
+    <!-- API -->
+    <fc-layoutpanel fccontent>
+        <fc-title fcLabel="属性" fcheader> </fc-title>
+        <div style="height:500px;" fccontent>
+            <fc-listdata [fcAppid]="'FCFIELDS'" [fcOption]="fcOption" [fcCondition]="fcCondition"></fc-listdata>
+        </div>
+    </fc-layoutpanel>
+    <fc-layoutpanel fccontent>
+        <fc-title fcLabel="事件" fcheader> </fc-title>
+        <div style="height:500px;" fccontent>
+            <fc-listdata [fcAppid]="'FCEVENT'" [fcOption]="fcOption" [fcCondition]="fcCondition"></fc-listdata>
+        </div>
+    </fc-layoutpanel>
+</fc-layoutpanel>

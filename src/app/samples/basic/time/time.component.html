@@ -1,0 +1,55 @@
+<!-- 时间 fc-time -->
+<fc-layoutpanel>
+    <fc-title fcLabel="时间" fcheader></fc-title>
+    <fc-layoutcol fccontent fcSpans="1,1">
+        <fc-layoutgroup fcTitle="基本" fccontent1>
+            <div fccontent>
+                <fc-time></fc-time>
+                <fc-time [(ngModel)]="now"></fc-time>
+            </div>
+        </fc-layoutgroup>
+        <fc-layoutgroup fcTitle="按钮大小" fccontent1>
+            <div fccontent>
+                <div>
+                    <fc-time [(ngModel)]="now" fcSize="large"></fc-time>
+                </div>
+                <div style="margin-top:24px;">
+                    <fc-time [(ngModel)]="now" fcSize="default"></fc-time>
+                </div>
+                <div style="margin-top:24px;">
+                    <fc-time [(ngModel)]="now" fcSize="small"></fc-time>
+                </div>
+            </div>
+        </fc-layoutgroup>
+        <fc-layoutgroup fcTitle="禁用" fccontent2>
+            <div fccontent>
+                <fc-time [(ngModel)]="now" fcDisabled="true"></fc-time>
+            </div>
+        </fc-layoutgroup>
+        <fc-layoutgroup fcTitle="时间格式" fccontent1>
+            <div fccontent>
+                <fc-time [(ngModel)]="now"></fc-time>
+                <fc-time [(ngModel)]="now" fcFormat="HH"></fc-time>
+                <fc-time [(ngModel)]="now" fcFormat="HH:mm"></fc-time>
+            </div>
+        </fc-layoutgroup>
+        <fc-layoutgroup fcTitle="没有值的时候显示的内容" fccontent2>
+            <div fccontent>
+                <fc-time [(ngModel)]="nownull" fcPlaceHolder="没有值的时候显示的内容"></fc-time>
+            </div>
+        </fc-layoutgroup>
+    </fc-layoutcol>
+    <!-- API -->
+    <fc-layoutpanel fccontent>
+        <fc-title fcLabel="属性" fcheader> </fc-title>
+        <div style="height:450px;" fccontent>
+            <fc-listdata [fcAppid]="'FCFIELDS'" [fcOption]="fcOption" [fcCondition]="fcCondition"></fc-listdata>
+        </div>
+    </fc-layoutpanel>
+    <fc-layoutpanel fccontent>
+        <fc-title fcLabel="事件" fcheader> </fc-title>
+        <div style="height:450px;" fccontent>
+            <fc-listdata [fcAppid]="'FCEVENT'" [fcOption]="fcOption" [fcCondition]="fcCondition"></fc-listdata>
+        </div>
+    </fc-layoutpanel>
+</fc-layoutpanel>
